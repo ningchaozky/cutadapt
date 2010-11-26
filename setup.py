@@ -1,6 +1,9 @@
-from distutils.core import setup, Extension
+from distutils.core import setup
+from distutils.extension import Extension
+from Cython.Distutils import build_ext
 
-module = Extension('calign', sources = [ 'calignmodule.c' ])
+#calign = Extension('calign', sources = [ 'calignmodule.c' ])
+pyxalign = Extension("align", ["align.pyx"])
 
 setup(name = 'cutadapt',
 	version = '0.6',
@@ -9,7 +12,8 @@ setup(name = 'cutadapt',
 	author_email = 'marcel.martin@tu-dortmund.de',
 	url = 'http://cutadapt.googlecode.com/',
 	license = 'MIT',
-	ext_modules = [ module ],
+	cmdclass = {'build_ext': build_ext},
+	ext_modules = [ pyxalign ],
 	py_modules = ['fasta'],
 	scripts = ['cutadapt']
 )

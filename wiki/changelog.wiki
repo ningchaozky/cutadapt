@@ -1,0 +1,41 @@
+#summary Archived release announcements
+
+= Changelog =
+
+*May 20, 2011:* cutadapt v0.9.4 has been released. These are the changes:
+  * Now compatible with Python 3.
+  * Add the --zero-cap option, which changes negative quality values to zero.
+This is a workaround to avoid segmentation faults in BWA. The option is now
+enabled by default when --bwa/--maq is used.
+  * Lots of unit tests added. Run them with cd tests && ./tests.sh .
+  * Fix issue 16: --discard-trimmed did not work.
+  * Allow to override auto-detection of input file format with the new -f/--format parameter. This mostly fixes issue 12.
+  * Don't break when the input file is empty.
+
+*March 16, 2011:* cutadapt v0.9.3 has been released. (*Note:* v0.9.2 had an incorrect manifest file. If you already have it and can run it, don't worry.)
+  * Case is now ignored when comparing the adapter with the read sequence.
+  * .FASTA/.QUAL files (not necessarily in color space) can now be read (some 454 software uses this format)
+  * Allow to input FASTA/FASTQ on standard input, fixing issue 10.
+  * The package has been refactored a lot. It now installs a single 'cutadapt' Python package instead of multiple Python modules. This avoids cluttering the global namespace and should lead to less problems with other Python modules. Thanks to Steve Lianoglou for pointing this out to me!
+
+*January 10, 2011:* cutadapt v0.9 is available. New features are:
+  * Use --too-short-output and --untrimmed-output to redirect too short or untrimmed reads to a separate file, based on patch by Paul Ryvkin (thanks!).
+  * With --maximum-length, reads longer than a specified length can be discarded.
+  * Added the --length-tag option, which helps to fix read lengths in FASTA/Q comment lines  (e.g., 'length=123' becomes 'length=58' after trimming) (requested by Paul Ryvkin)
+  * add -q/--quality-cutoff option for trimming low-quality ends (uses the same algorithm as BWA)                                                                               
+
+*December 9, 2010:* cutadapt v0.8 has been released. Important changes are:
+  * The default behavior now is to assume that an adapter has been ligated to the 3' end. This should be the correct  behavior for at least the SOLiD small RNA protocol (SREK) and also for the Illumina protocol. See the README for details.
+  * Different scoring function improves trimming: Some reads that should have been trimmed weren't.
+  * 20% faster                            
+
+*December 3, 2010:* cutadapt v0.7 has been released. Most visible change in this release is the support for discarding reads that are shorter than a specified length after trimming (--minimum-length or -m parameter). Error reporting was improved when encountering malformed files.
+
+*November 18, 2010:* cutadapt v0.6 supports gzipped input and output.
+
+*November 17, 2010:* cutadapt v0.5.1 has been released. This release adds the option "--discard" to discard reads matching an adapter. (This deprecates 0.5, which contained a syntax error in the setup script.)
+
+*November 17, 2010:* cutadapt v0.4 has been released. This release fixes a bug that occurred when dealing with multiple adapters.
+
+*September 27, 2010:* cutadapt v0.3 has been released. This version fixes a bug that led to huge memory usage when reading CSFASTA/QUAL files.
+

@@ -6,3 +6,5 @@ There is other software that can be used for adapter trimming.
 
   * [http://emboss.sourceforge.net/apps/release/6.3/emboss/apps/vectorstrip.html EMBOSS vectorstrip]
   * [http://hannonlab.cshl.edu/fastx_toolkit/commandline.html#fastx_clipper_usage fastx_clipper]
+
+  * [http://www.ncbi.nlm.nih.gov/pubmed/20089148 SeqTrim]

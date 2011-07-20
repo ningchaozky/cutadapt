@@ -2,6 +2,19 @@
 
 = Changelog =
 
+*July 20, 2011:* cutadapt v0.9.5 has been released. Please note that this version produces slightly different results compared to older versions! The changes are:
+
+  * Fix issue 20: Make the report go to standard output when -o/--output is specified.
+  * Recognize .fq as an extension for FASTQ files
+  * Add more unit tests (run them with {{{cd tests; ./tests.sh}}})
+  * The alignment algorithm has changed. It will now find some adapters that previously were missed.
+
+With the old alignment algorithm, finding an adapter would work as follows:
+  # Find an alignment between adapter and read -- longer alignments are better.
+  # If the number of errors in the alignment (divided by length) is above the maximum error rate, report the adapter as not being found.
+Sometimes, the long alignment that was found had too many errors, but a shorter alignment would not. The adapter was then incorrectly seen as "not found". The new alignment algorithm checks the error rate while aligning and only reports alignments that do not have too many errors.
+
+
 *May 20, 2011:* cutadapt v0.9.4 has been released. These are the changes:
   * Now compatible with Python 3.
   * Add the --zero-cap option, which changes negative quality values to zero.
@@ -38,4 +51,3 @@ enabled by default when --bwa/--maq is used.
 *November 17, 2010:* cutadapt v0.4 has been released. This release fixes a bug that occurred when dealing with multiple adapters.
 
 *September 27, 2010:* cutadapt v0.3 has been released. This version fixes a bug that led to huge memory usage when reading CSFASTA/QUAL files.
-

@@ -1,0 +1,67 @@
+#summary Documentation
+<wiki:toc max_depth="2" /> 
+
+Please see the [http://code.google.com/p/cutadapt/source/browse/trunk/README README file] included with cutadapt, which is the main documentation.
+
+= References =
+
+Cutadapt can be cited as follows:
+M. Martin. [http://journal.embnet.org/index.php/embnetjournal/article/view/200 Cutadapt removes adapter sequences from high-throughput sequencing reads]. EMBnet.journal, North America, 17, May 2011. Available at: [http://journal.embnet.org/index.php/embnetjournal/article/view/200] .
+
+Cutadapt was used for the paper [http://nar.oxfordjournals.org/cgi/content/abstract/gkq342v1 Deep sequencing reveals differential expression of microRNAs in favorable versus unfavorable neuroblastoma] by Schulte et al (2010).
+
+A preliminary version was used for [http://dx.doi.org/10.1093/hmg/ddp054 Massive parallel bisulfite sequencing of CG-rich DNA fragments reveals that methylation of many X-chromosomal CpG islands in female blood DNA is incomplete] by Zeschnigk et al. (2009).
+
+
+= Installation =
+
+Starting with version 0.9, cutadapt is [http://pypi.python.org/pypi/cutadapt listed in the Python Package Index]. You can therefore install it with:
+{{{
+easy_install cutadapt
+}}}
+or, if you have [http://pip.openplans.org/ pip] installed, with: 
+{{{
+pip install cutadapt
+}}}
+
+
+
+= (Frequently) Asked Questions =
+
+== `SyntaxError` ==
+If you get this error:
+{{{
+  File "./cutadapt", line 85
+    DOUBLE_ENCODE_TRANS = maketrans(b'0123.', b'ACGTN')
+}}}
+or this error:
+{{{
+   File "./cutadapt", line 62
+    print("# There are %7d sequences in this data set." % stats.n, file=outfile)
+                                                                       ^
+SyntaxError: invalid syntax
+}}}
+Then your Python is too old. At least Python 2.6 is needed for cutadapt.
+
+== gcc failed with exit status 1 ==
+
+If you get this error:
+{{{
+running build
+running build_py
+running build_ext
+building 'calign' extension
+gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall
+-Wstrict-prototypes -fPIC -I/usr/include/python2.6 -c calignmodule.c -o
+build/temp.linux-i686-2.6/calignmodule.o
+calignmodule.c:23:20: error: Python.h: No such file or directory
+calignmodule.c:42: error: expected ‘)’ before string constant
+calignmodule.c:80: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’
+before ‘*’ token
+calignmodule.c:263: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’
+before ‘methods’
+calignmodule.c:269: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’
+before ‘initcalign’
+error: command 'gcc' failed with exit status 1
+}}}
+Then you need to install the appropriate Python development packages. In Ubuntu, this is done with {{{sudo aptitude install python-dev}}}.

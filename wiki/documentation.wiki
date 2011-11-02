@@ -6,11 +6,16 @@ Please see the [http://code.google.com/p/cutadapt/source/browse/trunk/README REA
 = References =
 
 Cutadapt can be cited as follows:
+
 M. Martin. _Cutadapt removes adapter sequences from high-throughput sequencing reads_. EMBnet.journal, North America, 17, May 2011. Available at: [http://journal.embnet.org/index.php/embnetjournal/article/view/200] .
 
-Cutadapt was used for the paper [http://nar.oxfordjournals.org/cgi/content/abstract/gkq342v1 Deep sequencing reveals differential expression of microRNAs in favorable versus unfavorable neuroblastoma] by Schulte et al (2010).
+Cutadapt was used for this paper:
 
-A preliminary version was used for [http://dx.doi.org/10.1093/hmg/ddp054 Massive parallel bisulfite sequencing of CG-rich DNA fragments reveals that methylation of many X-chromosomal CpG islands in female blood DNA is incomplete] by Zeschnigk et al. (2009).
+[http://nar.oxfordjournals.org/cgi/content/abstract/gkq342v1 Deep sequencing reveals differential expression of microRNAs in favorable versus unfavorable neuroblastoma] by Schulte et al (2010).
+
+A preliminary version was used for:
+
+[http://dx.doi.org/10.1093/hmg/ddp054 Massive parallel bisulfite sequencing of CG-rich DNA fragments reveals that methylation of many X-chromosomal CpG islands in female blood DNA is incomplete] by Zeschnigk et al. (2009).
 
 
 = Installation =

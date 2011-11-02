@@ -6,7 +6,7 @@ Please see the [http://code.google.com/p/cutadapt/source/browse/trunk/README REA
 = References =
 
 Cutadapt can be cited as follows:
-M. Martin. [http://journal.embnet.org/index.php/embnetjournal/article/view/200 Cutadapt removes adapter sequences from high-throughput sequencing reads]. EMBnet.journal, North America, 17, May 2011. Available at: [http://journal.embnet.org/index.php/embnetjournal/article/view/200] .
+M. Martin. _Cutadapt removes adapter sequences from high-throughput sequencing reads_. EMBnet.journal, North America, 17, May 2011. Available at: [http://journal.embnet.org/index.php/embnetjournal/article/view/200] .
 
 Cutadapt was used for the paper [http://nar.oxfordjournals.org/cgi/content/abstract/gkq342v1 Deep sequencing reveals differential expression of microRNAs in favorable versus unfavorable neuroblastoma] by Schulte et al (2010).
 

@@ -1,7 +1,0 @@
-*.pyc
-calign.so
-MANIFEST
-build/
-dist/
-.coverage
-*~

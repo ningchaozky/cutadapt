@@ -2,6 +2,14 @@
 
 = Changelog =
 
+*November 4, 2011:* cutadapt v1.0 has been released. This special version number does not mark fundamental changes, it merely indicates that cutadapt is now a mature tool. Thanks also to all external contributors for their work on improving the tool!
+
+The changes in this release are:
+  * ASCII-encoded quality values were assumed to be encoded as ascii(quality+33). With the new parameter --quality-base, FASTQ files with qualities encoded as ascii(quality+64) as used in some versions of the Illumina pipeline can be read (fixes issue 7.)
+  * Allow to specify that adapters were ligated to the 5' end of reads. This change is based on a patch contributed by James Casbon.
+  * Add Galaxy support, contributed by Lance Parsons.
+  * Patch by James Casbon: Allow N wildcards in read or adapter or both. Wildcard matching of 'N's in the adapter is always done. If 'N's within reads should also match without counting as error, this needs to be explicitly requested via --match-read-wildcards.
+
 *July 20, 2011:* cutadapt v0.9.5 has been released. Please note that this version produces slightly different results compared to older versions! The changes are:
 
   * Fix issue 20: Make the report go to standard output when -o/--output is specified.

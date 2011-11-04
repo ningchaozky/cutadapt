@@ -1,0 +1,6 @@
+include lib/cutadapt/calign.so
+include lib/__init__.py
+graft tests/
+exclude tests/*.tmp
+exclude tests/.gitignore
+graft galaxy/

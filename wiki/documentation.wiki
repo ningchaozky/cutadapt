@@ -46,7 +46,15 @@ or this error:
                                                                        ^
 SyntaxError: invalid syntax
 }}}
-Then your Python is too old. At least Python 2.6 is needed for cutadapt.
+or this:
+{{{
+  File "./cutadapt", line 99
+    print("length", "count", sep="\t")
+}}}
+Then your Python is too old. At least Python 2.6 is needed for cutadapt. Often, there are multiple Python versions installed and you may get the wrong (older) one, although a newer one is available. To explicitly run a specific version, try a variant of this:
+{{{
+python2.6 ./cutadapt
+}}}
 
 == gcc failed with exit status 1 ==
 

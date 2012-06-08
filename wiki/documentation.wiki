@@ -29,7 +29,7 @@ or, if you have [http://pip.openplans.org/ pip] installed, with:
 pip install cutadapt
 }}}
 
-
+If this does not work, you may want to instead [http://code.google.com/p/cutadapt/downloads/list download the tar.gz file] manually. Unpack the file and read the "Installation" section in the README. 
 
 = (Frequently) Asked Questions =
 

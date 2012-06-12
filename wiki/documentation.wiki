@@ -77,7 +77,10 @@ calignmodule.c:269: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘_
 before ‘initcalign’
 error: command 'gcc' failed with exit status 1
 }}}
-Then you need to install the appropriate Python development packages. In Ubuntu, this is done with {{{sudo aptitude install python-dev}}}.
+Then you need to install the appropriate Python development packages. In Ubuntu, this is done with:
+{{{
+sudo apt-get install python-dev
+}}}
 
 == How does the `--overlap` parameter work? ==
 

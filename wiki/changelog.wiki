@@ -2,6 +2,23 @@
 
 = Changelog =
 
+*June 18, 2012:* cutadapt v1.1 has been released. This version is faster than previous versions and now supports 5' colorspace adapters. Note: If you use cutadapt without installation, you now need to type {{{bin/cutadapt}}} (instad of {{{./cutadapt}}}).
+
+The changes in this release are:
+
+  * Speed up the alignment by a factor of at least 3 by using Ukkonen's algorithm. The total runtime decreases by about 30% in the tested cases.
+  * Speedup of approx. 25% when reading from .gz files and using Python 2.7.
+  * When using cutadapt without installing it, you now need to run `bin/cutadapt` due to a new directory layout.
+  * Allow to "anchor" 5' adapters (`-g`), forcing them to be a prefix of the read. To use this, add the special character `^` to the beginning of the adapter sequence.
+  * Add the "-N" option, which allows 'N' characters within adapters to match literally.
+  * Allow to only trim qualities when no adapter is given on the command-line.
+  * Add a patch by James Casbon: include read names (ids) in rest file
+  * Use nosetest for testing. To run, install nose and simply run `nosetests`.
+  * Allow to give a colorspace adapter in basespace (gets automatically converted).
+  * Allow to search for 5' adapters (those specified with `-g`) in colorspace.
+  * allow to deal with colorspace FASTQ files from the SRA that contain a fake additional quality in the beginning (use `--format sra-fastq`)
+
+
 *November 4, 2011:* cutadapt v1.0 has been released. This special version number does not mark fundamental changes, it merely indicates that cutadapt is now a mature tool. Thanks also to all external contributors for their work on improving the tool!
 
 The changes in this release are:

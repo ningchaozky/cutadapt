@@ -2,6 +2,16 @@
 
 = Changelog =
 
+*November 30, 2012*: cutadapt v1.2 has been released.
+
+  * At least 25% faster processing of .csfasta/.qual files due to faster parser.
+  * Between 10% and 30% faster writing of gzip-compressed output files.
+  * Support 5' adapters in color space, even when no primer trimming is requested.
+  * Use the `--info-file' option to write further information about the found adapters in each read to a separate file.
+  * Named adapters are now possible. Use `-a My_Adapter=ACCGTA` to assign the name "My_adapter" to an adapter.
+  * Improve alignment algorithm for better poly-A trimming when there are sequencing errors. Previously, not the longest possible poly-A tail would be trimmed.
+  * James Casbon contributed the `--discard-untrimmed` option.
+
 *June 18, 2012:* cutadapt v1.1 has been released. This version is faster than previous versions and now supports 5' colorspace adapters. Note: If you use cutadapt without installation, you now need to type {{{bin/cutadapt}}} (instad of {{{./cutadapt}}}).
 
 The changes in this release are:

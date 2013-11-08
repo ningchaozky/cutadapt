@@ -2,6 +2,19 @@
 
 = Changelog =
 
+*November 8, 2013*: After a long hiatus, cutadapt v1.3 has been released. These are the changes:
+
+  * There is now preliminary support for paired-end adapter trimming using the new `--paired-output` option (contributed by James Casbon). See the [https://github.com/marcelm/cutadapt/blob/master/README.md#paired-end-adapter-trimming section in the README] for how to use it.
+ * Add the `--too-long-output` option.
+ * Add the `--no-trim option`, contributed by Dave Lawrence.
+ * Port handwritten C alignment module to Cython.
+ * Slightly speed up alignment of 5' adapters.
+ * Improve statistics output.
+ * Support bzip2-compressed files.
+ * Fix the `--rest-file` option (issue 56), and various other small fixes.
+
+
+
 *November 30, 2012*: cutadapt v1.2 has been released.
 
   * At least 25% faster processing of .csfasta/.qual files due to faster parser.

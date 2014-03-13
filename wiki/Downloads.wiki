@@ -1,0 +1,10 @@
+#summary Downloads
+
+= Downloads =
+
+Google Code has recently deprecated adding new downloads. Downloads will be available from PyPI in the future.
+
+  * [https://pypi.python.org/pypi/cutadapt/ cutadapt on PyPI]
+  * [https://pypi.python.org/packages/source/c/cutadapt/cutadapt-1.4.tar.gz cutadapt-1.4.tar.gz]
+  * [http://code.google.com/p/cutadapt/downloads/list?can=4 List of old downloads on Google Code]
+  * You can of course also get the source code for cutadapt from the [https://github.com/marcelm/cutadapt most recent sources from Github] and compile it yourself.

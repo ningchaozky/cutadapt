@@ -2,6 +2,19 @@
 
 = Changelog =
 
+*March 15, 2014:* Cutadapt version 1.4.1 fixes a small problem in the installation procedure. If you were not able to install cutadapt successfully, try this version.
+
+*March 13, 2014:* Cutadapt version 1.4 has been released. This release reduces the overhead of reading and writing files. On my test data set, a typical run of cutadapt (with a single adapter) takes 40% less time. These are the detailed changes:
+  * Reading and writing of FASTQ files is faster (thanks to Cython).
+  * Reading and writing of gzipped files is faster (up to 2x) on systems where the `gzip` program is available.
+  * The quality trimming function is four times faster (also due to Cython).
+  * Fix the statistics output for 3' colorspace adapters: The reported lengths were one too short. Thanks to Frank Wessely for reporting this.
+  * Support the `--no-indels` option. This disallows insertions and deletions while aligning the adapter. Currently, the option is only available for anchored 5' adapters. This fixes issue 69.
+  * As a sideeffect of implementing the --no-indels option: For colorspace, the length of a read (for `--minimum- and --maximum-length`) is now computed after primer base removal (when `--trim-primer` is specified).
+  * Added one column to the info file that contains the name of the found adapter.
+  * Add an explanation about colorspace ambiguity to the README
+
+
 *November 8, 2013*: After a long hiatus, cutadapt v1.3 has been released. These are the changes:
 
   * There is now preliminary support for paired-end adapter trimming using the new `--paired-output` option (contributed by James Casbon). See the [https://github.com/marcelm/cutadapt/blob/master/README.md#paired-end-adapter-trimming section in the README] for how to use it.

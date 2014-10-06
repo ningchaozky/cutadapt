@@ -2,6 +2,20 @@
 
 = Changelog =
 
+*August 5, 2014*: Cutadapt v1.5 has been released with the following improvements:
+
+  * Adapter sequences can now be read from a FASTA file. For example, write `-a file:adapters.fasta` to read 3' adapters from `adapters.fasta`. This works also for `-b` and `-g`. This fixes the long-standing issue #33. Note that cutadapt isn't really optimized for trimming dozens or even hundreds of adapters!
+  * There is now an option `--mask-adapter`, which can be used to not remove adapters, but to instead mask them with `N` characters. Thanks to Vittorio Zamboni for contributing this feature!
+  * U characters in the adapter sequence are automatically converted to T.
+  * Add the option `-u`/`--cut`, which can be used to unconditionally remove a number of bases from the beginning or end of each read.
+  * When the new option `--quiet` is used, no report is printed after all reads have been processed.
+  * When processing paired-end reads, cutadapt now checks whether the reads are properly paired.
+  * To handle paired-end reads, an option --untrimmed-paired-output was added.
+
+Minor changes:
+  * Do not run Cython at installation time unless the --cython option is provided.
+  * Make `--zero-cap` the default for colorspace reads.
+
 *March 15, 2014:* Cutadapt version 1.4.1 fixes a small problem in the installation procedure. If you were not able to install cutadapt successfully, try this version.
 
 *March 13, 2014:* Cutadapt version 1.4 has been released. This release reduces the overhead of reading and writing files. On my test data set, a typical run of cutadapt (with a single adapter) takes 40% less time. These are the detailed changes:

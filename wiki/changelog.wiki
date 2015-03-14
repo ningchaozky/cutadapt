@@ -2,6 +2,17 @@
 
 = Changelog =
 
+*November 26, 2014:* If you get the message `OSError: [Errno 2] No such file or directory: 'cutadapt/_align.pyx'`, then please update to cutadapt 1.7.1, which fixes the error.
+
+*November 25, 2014:* Cutadapt 1.7 is now available.
+
+  * IUPAC characters are now supported. For example, use `-a YACGT` for an adapter that matches both `CACGT` and `TACGT` with zero errors. Disable with `-N`. By default, IUPAC characters in the read are not interpreted in order to avoid matches in reads that consist of many (low-quality) `N` bases. Use `--match-read-wildcards` to enable them also in the read.
+  * Support for demultiplexing was added. This means that reads can be written to different files depending on which adapter was found. See [http://cutadapt.readthedocs.org/en/latest/guide.html#demultiplexing the section in the documentation] for how to use it. This is currently only supported for single-end reads.
+  * Add support for anchored 3' adapters. Append `$` to the adapter sequence to force the adapter to appear in the end of the read (as a suffix). Closes issue #81.
+  * Option `--cut` (`-u`) can now be specified twice, once for each end of the read. Thanks to Rasmus Borup Hansen for the patch!
+  * Options `--minimum-length`/`--maximum-length` (`-m`/`-M`) can be used standalone. That is, cutadapt can be used to filter reads by length without trimming adapters.
+  * Fix bug: Adapters read from a FASTA file can now be anchored.
+
 *October 6, 2014*: Cutadapt v1.6 is ready for download. There are no new features, but some bugs have been fixed and the documentation has been updated quite a bit.
 
   * Fix issue 77: Ensure `--format=...` can be used even with paired-end input.

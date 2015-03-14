@@ -2,4 +2,4 @@
 
 Issues can be reported using the [https://github.com/marcelm/cutadapt/issues GitHub issue tracker].
 
-All issues reported via Google Code were moved to !GitHub.
+All issues previously reported via Google Code have been moved to !GitHub.
